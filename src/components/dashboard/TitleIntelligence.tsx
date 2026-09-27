@@ -51,7 +51,7 @@ export const TitleIntelligence: React.FC<TitleIntelligenceProps> = ({ videos }) 
       {/* Main Title Intelligence Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Pattern Performance Bar Chart */}
-        <div className="bg-[#0D121D] border border-slate-800 rounded-xl p-5">
+        <div className="bg-[#0c1017] border border-slate-800 rounded-xl p-5">
           <h3 className="text-sm font-bold text-white font-mono uppercase mb-4 flex items-center justify-between">
             <span>Title Pattern vs Median Views</span>
             <span className="text-xs text-cyan-400">Pattern Hierarchy</span>
@@ -74,7 +74,7 @@ export const TitleIntelligence: React.FC<TitleIntelligenceProps> = ({ videos }) 
         </div>
 
         {/* Title Pattern Breakdown Cards */}
-        <div className="bg-[#0D121D] border border-slate-800 rounded-xl p-5 space-y-4">
+        <div className="bg-[#0c1017] border border-slate-800 rounded-xl p-5 space-y-4">
           <h3 className="text-sm font-bold text-white font-mono uppercase flex items-center justify-between">
             <span>Title Structural Insights</span>
             <span className="text-xs text-amber-400">Packaging Hooks</span>

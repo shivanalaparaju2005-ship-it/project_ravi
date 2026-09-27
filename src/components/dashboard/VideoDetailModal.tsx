@@ -18,9 +18,9 @@ export const VideoDetailModal: React.FC<VideoDetailModalProps> = ({ video, isOwn
 
   return (
     <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
-      <div className="bg-[#0D121D] border border-slate-800 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto custom-scrollbar shadow-2xl relative">
+      <div className="bg-[#0c1017] border border-slate-800 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto custom-scrollbar shadow-2xl relative">
         {/* Header */}
-        <div className="sticky top-0 bg-[#0D121D]/90 backdrop-blur-md border-b border-slate-800 p-6 flex items-center justify-between z-10">
+        <div className="sticky top-0 bg-[#0c1017]/90 backdrop-blur-md border-b border-slate-800 p-6 flex items-center justify-between z-10">
           <div className="flex items-center space-x-3">
             <span className={`px-2.5 py-1 rounded text-xs font-mono font-bold ${
               pub.performanceTier === 'Outperformer'

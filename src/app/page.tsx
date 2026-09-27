@@ -16,8 +16,12 @@ import { StrategyEngine } from '@/components/dashboard/StrategyEngine';
 import { ContentOpportunityMap } from '@/components/dashboard/ContentOpportunityMap';
 import { WorkflowAndResearch } from '@/components/dashboard/WorkflowAndResearch';
 import { ExperimentLab } from '@/components/dashboard/ExperimentLab';
+import { StrategyCalendar } from '@/components/dashboard/StrategyCalendar';
 import { DataQualityCenter } from '@/components/dashboard/DataQualityCenter';
+import { DataSources } from '@/components/dashboard/DataSources';
+import { Methodology } from '@/components/dashboard/Methodology';
 import { StrategyReportView } from '@/components/dashboard/StrategyReportView';
+import { ExportView } from '@/components/dashboard/ExportView';
 import { DEMO_CHANNEL_METRICS, DEMO_VIDEOS } from '@/lib/demo-data';
 import { fetchChannelData } from '@/lib/youtube-api';
 import { ChannelMetrics, CombinedVideoData } from '@/lib/types';
@@ -58,7 +62,7 @@ export default function DashboardPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#070A0F] text-slate-100 flex flex-col md:flex-row">
+    <div className="min-h-screen bg-[#070A0F] text-slate-100 flex flex-col md:flex-row font-sans">
       {/* Sidebar Navigation */}
       <Sidebar activeSection={activeSection} onSelectSection={setActiveSection} />
 
@@ -83,7 +87,7 @@ export default function DashboardPage() {
               <span>Fetching YouTube Channel Intelligence Data...</span>
             </div>
           ) : (
-            <>
+            <div className="max-w-[1600px] mx-auto animate-in fade-in duration-500">
               {activeSection === 'overview' && (
                 <ExecutiveOverview
                   channel={channel}
@@ -105,12 +109,12 @@ export default function DashboardPage() {
                 <ContentIntelligence videos={videos} />
               )}
 
-              {activeSection === 'thumbnail' && (
-                <ThumbnailIntelligence videos={videos} />
-              )}
-
               {activeSection === 'title' && (
                 <TitleIntelligence videos={videos} />
+              )}
+
+              {activeSection === 'thumbnail' && (
+                <ThumbnailIntelligence videos={videos} />
               )}
 
               {activeSection === 'audience' && (
@@ -133,12 +137,16 @@ export default function DashboardPage() {
                 <ContentOpportunityMap />
               )}
 
-              {activeSection === 'workflow' && (
+              {activeSection === 'research' && (
                 <WorkflowAndResearch />
               )}
 
               {activeSection === 'experiments' && (
                 <ExperimentLab />
+              )}
+
+              {activeSection === 'calendar' && (
+                <StrategyCalendar />
               )}
 
               {activeSection === 'quality' && (
@@ -149,6 +157,14 @@ export default function DashboardPage() {
                 />
               )}
 
+              {activeSection === 'sources' && (
+                <DataSources />
+              )}
+
+              {activeSection === 'methodology' && (
+                <Methodology />
+              )}
+
               {activeSection === 'report' && (
                 <StrategyReportView
                   channel={channel}
@@ -156,7 +172,11 @@ export default function DashboardPage() {
                   isOwnerConnected={isOwnerConnected}
                 />
               )}
-            </>
+
+              {activeSection === 'export' && (
+                <ExportView />
+              )}
+            </div>
           )}
         </main>
       </div>
@@ -169,4 +189,4 @@ export default function DashboardPage() {
       />
     </div>
   );
-};
+}

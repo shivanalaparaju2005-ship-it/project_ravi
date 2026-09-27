@@ -23,7 +23,7 @@ export const ThumbnailIntelligence: React.FC<ThumbnailIntelligenceProps> = ({ vi
   return (
     <div className="space-y-6">
       {/* Module Header */}
-      <div className="bg-[#0D121D] border border-slate-800 rounded-xl p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="bg-[#0c1017] border border-slate-800 rounded-xl p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center space-x-3">
           <div className="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
             <ImageIcon className="w-5 h-5" />
@@ -69,7 +69,7 @@ export const ThumbnailIntelligence: React.FC<ThumbnailIntelligenceProps> = ({ vi
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Quad 1: High Views + High Engagement */}
-            <div className="bg-[#0D121D] border-2 border-emerald-500/40 rounded-xl p-4 space-y-3">
+            <div className="bg-[#0c1017] border-2 border-emerald-500/40 rounded-xl p-4 space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
                   <Award className="w-4 h-4" /> High Views + High Engagement ({quadHighViewsHighEng.length})
@@ -95,7 +95,7 @@ export const ThumbnailIntelligence: React.FC<ThumbnailIntelligenceProps> = ({ vi
             </div>
 
             {/* Quad 2: High Views + Low Engagement */}
-            <div className="bg-[#0D121D] border border-cyan-500/30 rounded-xl p-4 space-y-3">
+            <div className="bg-[#0c1017] border border-cyan-500/30 rounded-xl p-4 space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">
                   High Views + Moderate Engagement ({quadHighViewsLowEng.length})
@@ -121,7 +121,7 @@ export const ThumbnailIntelligence: React.FC<ThumbnailIntelligenceProps> = ({ vi
             </div>
 
             {/* Quad 3: Low Views + High Engagement */}
-            <div className="bg-[#0D121D] border border-amber-500/30 rounded-xl p-4 space-y-3">
+            <div className="bg-[#0c1017] border border-amber-500/30 rounded-xl p-4 space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider">
                   Low Views + High Engagement ({quadLowViewsHighEng.length})
@@ -147,7 +147,7 @@ export const ThumbnailIntelligence: React.FC<ThumbnailIntelligenceProps> = ({ vi
             </div>
 
             {/* Quad 4: Low Views + Low Engagement */}
-            <div className="bg-[#0D121D] border border-slate-800 rounded-xl p-4 space-y-3">
+            <div className="bg-[#0c1017] border border-slate-800 rounded-xl p-4 space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider">
                   Below Baseline ({quadLowViewsLowEng.length})
@@ -177,7 +177,7 @@ export const ThumbnailIntelligence: React.FC<ThumbnailIntelligenceProps> = ({ vi
         /* Visual Grid View */
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {videos.map(v => (
-            <div key={v.public.id} className="bg-[#0D121D] border border-slate-800 rounded-xl overflow-hidden group hover:border-cyan-500/40 transition-all">
+            <div key={v.public.id} className="bg-[#0c1017] border border-slate-800 rounded-xl overflow-hidden group hover:border-cyan-500/40 transition-all">
               <img src={v.public.thumbnailUrl} alt={v.public.title} className="w-full h-40 object-cover" />
               <div className="p-4 space-y-2">
                 <h4 className="text-xs font-medium text-white line-clamp-2">{v.public.title}</h4>

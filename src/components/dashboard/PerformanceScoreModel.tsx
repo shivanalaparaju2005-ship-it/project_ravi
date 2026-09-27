@@ -18,7 +18,7 @@ export const PerformanceScoreModel: React.FC<PerformanceScoreModelProps> = ({ vi
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="bg-[#0D121D] border border-slate-800 rounded-xl p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="bg-[#0c1017] border border-slate-800 rounded-xl p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center space-x-3">
           <div className="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
             <Award className="w-5 h-5" />
@@ -55,7 +55,7 @@ export const PerformanceScoreModel: React.FC<PerformanceScoreModelProps> = ({ vi
       </div>
 
       {/* Interactive Weight Adjustment Sliders */}
-      <div className="bg-[#0D121D] border border-slate-800 rounded-xl p-5 space-y-4">
+      <div className="bg-[#0c1017] border border-slate-800 rounded-xl p-5 space-y-4">
         <h3 className="text-sm font-bold text-white font-mono uppercase flex items-center gap-2">
           <Sliders className="w-4 h-4 text-cyan-400" /> Adjust Weight Parameters
         </h3>
@@ -132,7 +132,7 @@ export const PerformanceScoreModel: React.FC<PerformanceScoreModelProps> = ({ vi
       </div>
 
       {/* Live Re-scored Videos Preview */}
-      <div className="bg-[#0D121D] border border-slate-800 rounded-xl p-5 space-y-3">
+      <div className="bg-[#0c1017] border border-slate-800 rounded-xl p-5 space-y-3">
         <h3 className="text-sm font-bold text-white font-mono uppercase">
           Live Dynamically Scored Videos
         </h3>

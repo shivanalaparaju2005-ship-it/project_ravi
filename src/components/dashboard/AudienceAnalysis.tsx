@@ -10,7 +10,7 @@ interface AudienceAnalysisProps {
 export const AudienceAnalysis: React.FC<AudienceAnalysisProps> = ({ isOwnerConnected }) => {
   if (!isOwnerConnected) {
     return (
-      <div className="bg-[#0D121D] border border-amber-500/30 rounded-2xl p-8 md:p-12 text-center max-w-3xl mx-auto my-6 shadow-2xl relative overflow-hidden">
+      <div className="bg-[#0c1017] border border-amber-500/30 rounded-2xl p-8 md:p-12 text-center max-w-3xl mx-auto my-6 shadow-2xl relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl -z-10" />
 
         <div className="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center mx-auto mb-6 shadow-lg shadow-amber-500/10">
@@ -57,7 +57,7 @@ export const AudienceAnalysis: React.FC<AudienceAnalysisProps> = ({ isOwnerConne
   }
 
   return (
-    <div className="p-6 bg-[#0D121D] border border-slate-800 rounded-xl text-white">
+    <div className="p-6 bg-[#0c1017] border border-slate-800 rounded-xl text-white">
       Audience Analytics active.
     </div>
   );

@@ -9,7 +9,7 @@ interface DisclaimerProps {
 
 export const OwnerMetricsDisclaimer: React.FC<DisclaimerProps> = ({ isOwnerConnected }) => {
   return (
-    <div className="bg-[#0D121D] border border-slate-800 rounded-xl p-4 mb-6 shadow-md">
+    <div className="bg-[#0c1017] border border-slate-800 rounded-xl p-4 mb-6 shadow-md">
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         {/* Left Side: Public Data Status */}
         <div className="flex items-start space-x-3">

@@ -26,7 +26,7 @@ export const StrategyReportView: React.FC<StrategyReportViewProps> = ({
   return (
     <div className="space-y-6">
       {/* Top Action Bar */}
-      <div className="bg-[#0D121D] border border-slate-800 rounded-xl p-4 flex items-center justify-between no-print">
+      <div className="bg-[#0c1017] border border-slate-800 rounded-xl p-4 flex items-center justify-between no-print">
         <div>
           <h2 className="text-sm font-bold text-white font-mono uppercase">
             Exportable Channel Strategy Report

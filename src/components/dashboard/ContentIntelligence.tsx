@@ -37,7 +37,7 @@ export const ContentIntelligence: React.FC<ContentIntelligenceProps> = ({ videos
   return (
     <div className="space-y-6">
       {/* Header Info */}
-      <div className="bg-[#0D121D] border border-slate-800 rounded-xl p-5">
+      <div className="bg-[#0c1017] border border-slate-800 rounded-xl p-5">
         <div className="flex items-center space-x-3">
           <div className="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
             <Compass className="w-5 h-5" />
@@ -54,7 +54,7 @@ export const ContentIntelligence: React.FC<ContentIntelligenceProps> = ({ videos
       </div>
 
       {/* Category Performance Bar Chart */}
-      <div className="bg-[#0D121D] border border-slate-800 rounded-xl p-5">
+      <div className="bg-[#0c1017] border border-slate-800 rounded-xl p-5">
         <h3 className="text-sm font-bold text-white font-mono uppercase mb-4 flex items-center justify-between">
           <span>Median Views by Content Pillar</span>
           <span className="text-xs text-cyan-400 font-normal">Channel Baseline Benchmark</span>
@@ -79,7 +79,7 @@ export const ContentIntelligence: React.FC<ContentIntelligenceProps> = ({ videos
       {/* Best Content Pillars & Content Gaps */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Best Content Pillars */}
-        <div className="bg-[#0D121D] border border-slate-800 rounded-xl p-5">
+        <div className="bg-[#0c1017] border border-slate-800 rounded-xl p-5">
           <div className="flex items-center space-x-2 mb-4">
             <Award className="w-5 h-5 text-emerald-400" />
             <h3 className="text-sm font-bold text-white font-mono uppercase">
@@ -109,7 +109,7 @@ export const ContentIntelligence: React.FC<ContentIntelligenceProps> = ({ videos
         </div>
 
         {/* Content Gap Identification */}
-        <div className="bg-[#0D121D] border border-slate-800 rounded-xl p-5">
+        <div className="bg-[#0c1017] border border-slate-800 rounded-xl p-5">
           <div className="flex items-center space-x-2 mb-4">
             <Lightbulb className="w-5 h-5 text-amber-400" />
             <h3 className="text-sm font-bold text-white font-mono uppercase">

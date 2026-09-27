@@ -32,7 +32,7 @@ export const GrowthAnalysis: React.FC<GrowthAnalysisProps> = ({ channel, videos 
   return (
     <div className="space-y-6">
       {/* Velocity Banner */}
-      <div className="bg-[#0D121D] border border-slate-800 rounded-xl p-5 flex items-center space-x-3">
+      <div className="bg-[#0c1017] border border-slate-800 rounded-xl p-5 flex items-center space-x-3">
         <div className="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
           <TrendingUp className="w-5 h-5" />
         </div>
@@ -47,7 +47,7 @@ export const GrowthAnalysis: React.FC<GrowthAnalysisProps> = ({ channel, videos 
       </div>
 
       {/* Monthly Publishing Velocity Chart */}
-      <div className="bg-[#0D121D] border border-slate-800 rounded-xl p-5">
+      <div className="bg-[#0c1017] border border-slate-800 rounded-xl p-5">
         <h3 className="text-sm font-bold text-white font-mono uppercase mb-4 flex items-center justify-between">
           <span>Monthly Video Output Velocity</span>
           <span className="text-xs text-cyan-400">Average 4 Videos / Month</span>

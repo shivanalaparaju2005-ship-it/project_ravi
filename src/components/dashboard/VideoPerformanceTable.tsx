@@ -54,9 +54,19 @@ export const VideoPerformanceTable: React.FC<VideoPerformanceTableProps> = ({
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-8 animate-in fade-in duration-500 max-w-[1600px] mx-auto">
+      {/* Header */}
+      <div>
+        <h2 className="text-3xl font-black text-white uppercase tracking-tight font-sans">
+          Video Performance Log
+        </h2>
+        <p className="text-sm text-slate-400 mt-2 font-light">
+          Comprehensive historical performance log. Owner metrics are strictly isolated and never fabricated.
+        </p>
+      </div>
+
       {/* Search & Filter Header Toolbar */}
-      <div className="bg-[#0D121D] border border-slate-800 rounded-xl p-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="bg-[#0c1017] border border-slate-800/80 rounded-xl p-5 flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
         {/* Search Bar */}
         <div className="relative w-full md:w-80">
           <Search className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -65,7 +75,7 @@ export const VideoPerformanceTable: React.FC<VideoPerformanceTableProps> = ({
             placeholder="Search video titles..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full bg-slate-900 border border-slate-700/80 rounded-lg pl-9 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 font-sans"
+            className="w-full bg-slate-900/50 border border-slate-700/80 rounded-lg pl-9 pr-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 transition-all font-sans"
           />
         </div>
 
@@ -76,7 +86,7 @@ export const VideoPerformanceTable: React.FC<VideoPerformanceTableProps> = ({
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-300 focus:outline-none focus:border-cyan-500 font-mono"
+              className="bg-slate-900/50 border border-slate-700/80 rounded-lg px-3 py-1.5 text-xs text-slate-300 focus:outline-none focus:border-cyan-500/50 font-mono transition-all"
             >
               <option value="ALL">All Categories ({videos.length})</option>
               {categories.map(cat => (
@@ -88,7 +98,7 @@ export const VideoPerformanceTable: React.FC<VideoPerformanceTableProps> = ({
           <select
             value={selectedTier}
             onChange={(e) => setSelectedTier(e.target.value)}
-            className="bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-300 focus:outline-none focus:border-cyan-500 font-mono"
+            className="bg-slate-900/50 border border-slate-700/80 rounded-lg px-3 py-1.5 text-xs text-slate-300 focus:outline-none focus:border-cyan-500/50 font-mono transition-all"
           >
             <option value="ALL">All Performance Tiers</option>
             <option value="Outperformer">Outperformer</option>
@@ -99,76 +109,76 @@ export const VideoPerformanceTable: React.FC<VideoPerformanceTableProps> = ({
       </div>
 
       {/* Main Table */}
-      <div className="bg-[#0D121D] border border-slate-800 rounded-xl overflow-x-auto custom-scrollbar shadow-xl">
+      <div className="bg-[#0c1017] border border-slate-800/80 rounded-xl overflow-x-auto custom-scrollbar shadow-xl">
         <table className="w-full text-left border-collapse min-w-[1000px]">
           <thead>
-            <tr className="bg-slate-950/80 border-b border-slate-800 text-[11px] font-mono text-slate-400 uppercase tracking-wider">
-              <th className="py-3.5 px-4">Video</th>
-              <th className="py-3.5 px-3">Published</th>
-              <th className="py-3.5 px-3 cursor-pointer hover:text-white" onClick={() => handleSort('viewCount')}>
+            <tr className="bg-slate-900/40 border-b border-slate-800/80 text-[10px] font-mono text-slate-500 uppercase tracking-widest">
+              <th className="py-4 px-5">Video Asset</th>
+              <th className="py-4 px-3">Published</th>
+              <th className="py-4 px-3 cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('viewCount')}>
                 <div className="flex items-center gap-1">
                   <span>Views</span> <ArrowUpDown className="w-3 h-3" />
                 </div>
               </th>
-              <th className="py-3.5 px-3 cursor-pointer hover:text-white" onClick={() => handleSort('publicEngagementRate')}>
+              <th className="py-4 px-3 cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('publicEngagementRate')}>
                 <div className="flex items-center gap-1">
                   <span>Engagement</span> <ArrowUpDown className="w-3 h-3" />
                 </div>
               </th>
-              <th className="py-3.5 px-3 cursor-pointer hover:text-white" onClick={() => handleSort('viewsPerDay')}>
+              <th className="py-4 px-3 cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('viewsPerDay')}>
                 <div className="flex items-center gap-1">
                   <span>Views/Day</span> <ArrowUpDown className="w-3 h-3" />
                 </div>
               </th>
-              <th className="py-3.5 px-3">Like %</th>
-              <th className="py-3.5 px-3">Comment %</th>
-              <th className="py-3.5 px-3 bg-slate-900/60 text-cyan-400">
+              <th className="py-4 px-3">Like %</th>
+              <th className="py-4 px-3">Comment %</th>
+              <th className="py-4 px-3 bg-indigo-950/10 text-indigo-400/80 border-l border-slate-800/40">
                 <div className="flex items-center gap-1">
                   <span>Impressions (Owner)</span>
                 </div>
               </th>
-              <th className="py-3.5 px-3 bg-slate-900/60 text-cyan-400">
+              <th className="py-4 px-3 bg-indigo-950/10 text-indigo-400/80">
                 <div className="flex items-center gap-1">
                   <span>CTR (Owner)</span>
                 </div>
               </th>
-              <th className="py-3.5 px-3 bg-slate-900/60 text-cyan-400">
+              <th className="py-4 px-3 bg-indigo-950/10 text-indigo-400/80">
                 <div className="flex items-center gap-1">
                   <span>Revenue (Owner)</span>
                 </div>
               </th>
-              <th className="py-3.5 px-4 text-right">Action</th>
+              <th className="py-4 px-5 text-right">Details</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-800/60 text-xs">
+          <tbody className="text-xs">
             {filteredVideos.map(video => (
               <tr
                 key={video.public.id}
-                className="hover:bg-slate-900/60 transition-colors group cursor-pointer"
+                className="border-b border-slate-800/40 hover:bg-slate-900/40 transition-colors group cursor-pointer"
                 onClick={() => onSelectVideo(video)}
               >
                 {/* Thumbnail & Title */}
-                <td className="py-3 px-4 max-w-sm">
-                  <div className="flex items-start space-x-3">
+                <td className="py-4 px-5 max-w-sm">
+                  <div className="flex items-start space-x-4">
                     <div className="relative shrink-0">
                       <img
                         src={video.public.thumbnailUrl}
                         alt={video.public.title}
-                        className="w-20 h-12 rounded object-cover border border-slate-700 bg-slate-900"
+                        className="w-24 h-14 rounded-md object-cover border border-slate-800 bg-[#0a0d14]"
                       />
-                      <span className="absolute bottom-1 right-1 bg-slate-950/90 text-white font-mono text-[9px] px-1 rounded">
+                      <span className="absolute bottom-1 right-1 bg-[#0a0d14]/90 text-slate-300 font-mono text-[9px] px-1 rounded border border-slate-800">
                         {video.public.durationFormatted}
                       </span>
                     </div>
                     <div className="truncate">
-                      <h4 className="font-medium text-slate-200 group-hover:text-cyan-400 transition-colors truncate">
+                      <h4 className="font-medium text-slate-200 group-hover:text-cyan-400 transition-colors truncate text-sm">
                         {video.public.title}
                       </h4>
-                      <div className="flex items-center gap-2 mt-1 font-mono text-[10px]">
-                        <span className="px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">
+                      <div className="flex items-center gap-2 mt-1.5 font-mono text-[9px] tracking-wider uppercase">
+                        <span className="px-2 py-0.5 rounded bg-slate-900 text-slate-400 border border-slate-800/80">
                           {video.public.category}
                         </span>
-                        <span className={`px-1.5 py-0.5 rounded font-semibold ${
+                        <span className={`px-2 py-0.5 rounded ${
                           video.public.performanceTier === 'Outperformer'
                             ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
                             : video.public.performanceTier === 'Underperformer'
@@ -183,7 +193,7 @@ export const VideoPerformanceTable: React.FC<VideoPerformanceTableProps> = ({
                 </td>
 
                 {/* Published Date */}
-                <td className="py-3 px-3 text-slate-400 font-mono">
+                <td className="py-4 px-3 text-slate-400 font-mono">
                   {new Date(video.public.publishedAt).toLocaleDateString('en-US', {
                     month: 'short',
                     day: 'numeric',
@@ -192,73 +202,73 @@ export const VideoPerformanceTable: React.FC<VideoPerformanceTableProps> = ({
                 </td>
 
                 {/* Views */}
-                <td className="py-3 px-3 font-mono font-bold text-white">
+                <td className="py-4 px-3 font-mono font-bold text-white text-sm">
                   {formatNumber(video.public.viewCount)}
                 </td>
 
                 {/* Engagement Rate */}
-                <td className="py-3 px-3 font-mono font-semibold text-emerald-400">
+                <td className="py-4 px-3 font-mono font-semibold text-emerald-400">
                   {video.public.publicEngagementRate}%
                 </td>
 
                 {/* Views per Day */}
-                <td className="py-3 px-3 font-mono text-cyan-400">
+                <td className="py-4 px-3 font-mono text-cyan-400 font-medium">
                   {formatNumber(video.public.viewsPerDay)}
                 </td>
 
                 {/* Like Rate */}
-                <td className="py-3 px-3 font-mono text-slate-300">
+                <td className="py-4 px-3 font-mono text-slate-400">
                   {video.public.likeRate}%
                 </td>
 
                 {/* Comment Rate */}
-                <td className="py-3 px-3 font-mono text-slate-300">
+                <td className="py-4 px-3 font-mono text-slate-400">
                   {video.public.commentRate}%
                 </td>
 
                 {/* Owner Impressions */}
-                <td className="py-3 px-3 bg-slate-900/30 font-mono text-slate-400">
+                <td className="py-4 px-3 bg-indigo-950/5 font-mono text-slate-500 border-l border-slate-800/40">
                   {isOwnerConnected && video.owner.impressions !== null ? (
-                    formatNumber(video.owner.impressions)
+                    <span className="text-slate-300">{formatNumber(video.owner.impressions)}</span>
                   ) : (
-                    <span className="text-[10px] text-amber-400 bg-amber-500/10 border border-amber-500/20 px-1.5 py-0.5 rounded flex items-center gap-1 w-fit">
+                    <span className="text-[10px] text-slate-500 bg-slate-900/80 border border-slate-800 px-1.5 py-0.5 rounded flex items-center gap-1 w-fit">
                       <Lock className="w-3 h-3" /> N/A
                     </span>
                   )}
                 </td>
 
                 {/* Owner CTR */}
-                <td className="py-3 px-3 bg-slate-900/30 font-mono text-slate-400">
+                <td className="py-4 px-3 bg-indigo-950/5 font-mono text-slate-500">
                   {isOwnerConnected && video.owner.ctr !== null ? (
-                    `${video.owner.ctr}%`
+                    <span className="text-slate-300">{video.owner.ctr}%</span>
                   ) : (
-                    <span className="text-[10px] text-amber-400 bg-amber-500/10 border border-amber-500/20 px-1.5 py-0.5 rounded flex items-center gap-1 w-fit">
+                    <span className="text-[10px] text-slate-500 bg-slate-900/80 border border-slate-800 px-1.5 py-0.5 rounded flex items-center gap-1 w-fit">
                       <Lock className="w-3 h-3" /> N/A
                     </span>
                   )}
                 </td>
 
                 {/* Owner Revenue */}
-                <td className="py-3 px-3 bg-slate-900/30 font-mono text-slate-400">
+                <td className="py-4 px-3 bg-indigo-950/5 font-mono text-slate-500">
                   {isOwnerConnected && video.owner.estimatedRevenue !== null ? (
-                    `$${video.owner.estimatedRevenue}`
+                    <span className="text-slate-300">${video.owner.estimatedRevenue}</span>
                   ) : (
-                    <span className="text-[10px] text-amber-400 bg-amber-500/10 border border-amber-500/20 px-1.5 py-0.5 rounded flex items-center gap-1 w-fit">
+                    <span className="text-[10px] text-slate-500 bg-slate-900/80 border border-slate-800 px-1.5 py-0.5 rounded flex items-center gap-1 w-fit">
                       <Lock className="w-3 h-3" /> N/A
                     </span>
                   )}
                 </td>
 
                 {/* Action button */}
-                <td className="py-3 px-4 text-right">
+                <td className="py-4 px-5 text-right">
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
                       onSelectVideo(video);
                     }}
-                    className="p-1.5 rounded-lg bg-slate-800 hover:bg-cyan-500/20 hover:text-cyan-400 text-slate-400 transition-colors"
+                    className="p-2 rounded-md bg-slate-900/80 hover:bg-cyan-500/10 hover:text-cyan-400 text-slate-400 transition-colors border border-slate-800"
                   >
-                    <ExternalLink className="w-3.5 h-3.5" />
+                    <ExternalLink className="w-4 h-4" />
                   </button>
                 </td>
               </tr>
